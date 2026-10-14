@@ -1,0 +1,476 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    /* الخلفية */
+    background-image: url("img/ss.jpg");  /* مسار الصورة */
+    background-repeat: no-repeat;         /* لا تكرر الصورة */
+    background-size: cover;               /* تغطي كامل المساحة */
+    background-position: center center;   /* توضع في المنتصف */
+    background-attachment: fixed;         /* تبقى ثابتة عند التمرير */
+
+}
+/* إضافة طبقة blur فوق الخلفية */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(8px);
+    z-index: -1;
+}
+
+header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+    background: black;
+    height: 100px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo img {
+    width: 120px;
+    height: 80px;
+    /* position:  absolute;  */
+    /* تحديد الموقع المطلق */
+    /**إذا كنت تستخدم هيدر (Header)، وتريد الشعار داخله، يمكنك استخدام position: fixed; بدلاً من absolute; ليبقى في مكانه عند التمرير.*/
+    
+    top: 0px;  /* المسافة من الأعلى */
+    left: 0px; /* المسافة من اليسار */
+    width: 90px; /* تصغير الحجم حسب الحاجة */
+    height: auto; /* الحفاظ على نسبة الأبعاد */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+}
+nav ul li{margin:0 15px}
+nav ul a{
+    display: inline-block; 
+    padding: 5px;
+    text-decoration: none;
+    transition: 0.2s ease-in; 
+    font-size: 30px;  
+    color: rgb(250, 235, 215); 
+}
+
+nav ul a:hover{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 35px;
+    cursor: pointer;
+    background-color: #e67e22;
+    border-radius: 40px;
+}
+
+.hero {
+    display: flex;
+    align-items: center; /* لضبط العناصر على نفس الخط */
+    justify-content: space-between; /* يوزع العناصر بين اليمين واليسار */
+    /* width: 100vw; */
+    padding: 50px; /* تأكد من وجود تباعد متناسق */
+}
+
+
+.hero-text {
+    max-width: 45%;
+    color: #1a1a1a;
+    font-size:30px;
+    text-align: left;
+}
+
+.hero-text h2 {
+    max-width: 50%;
+    color: #1a1a1a;
+    text-align: left; /* تأكد أن النص في الجهة اليسرى */
+    font-size: 2.5em;
+    margin-bottom: 0px;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 45px;
+}
+
+.hero-image {
+    width: 100%; /* جعل حجم الصورة مماثلاً للنص */
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+     /* وسط الصورة داخل القسم الخاص بها */
+
+}
+
+.hero-image img{
+    width: 800px;
+    height: auto;
+     /* يحافظ على تناسب الأبعاد */  
+}
+
+.btn {
+    background: #979490;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 90px;
+    font-size: 1.2em;
+    margin-right: 50px;
+ 
+}
+
+.btn:hover{
+    background: #e67e22;
+    cursor: pointer;
+    color: #1a1a1a;
+}
+
+.btn2 {
+    background: #979490;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 90px;
+    font-size: 1.2em;}
+
+.btn2:hover{
+    background: #e67e22;
+    cursor: pointer;
+    color: #1a1a1a;
+}
+
+.favorites{
+    padding: 50px 0}
+
+.favorites h1 {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size: 60px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.favorites h2 {
+    font-family:'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size:40px;
+}
+
+.table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-top: 50px;
+
+}
+
+.product{
+    background: rgba(255,255,255,0.6); /*ابيض شفاف*/
+    backdrop-filter: blur(10px); /*يعطي تاثير زججاجي خفيف*/
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 15px;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transform: translateY(10%);
+    margin-top: 160px;
+    position: relative;
+    height: 600px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product img{
+    transform: translateY(-35%);
+    padding-top: 10px;
+    }
+
+
+.product h3{
+    font-size: 30px;
+    color: black;
+    position:absolute;
+    padding-top: 350px;
+}
+
+.product span{
+    position: absolute;
+    padding-top: 400px;
+    font-size: 25px;
+    color: black;
+}
+
+.product h4{
+    position: absolute;
+    padding: 450px;
+    font-size: 22px;
+    color:black;
+    margin-top:5px;
+}
+
+.product button{
+    position: absolute;
+    font-size: 26px;
+    background: #e67e22;
+    color: black;
+    border:none;
+    padding: 8px 12px;
+    border-radius: 25px;
+    margin-top: 500px;
+
+}
+
+button:hover{
+    color: black;
+    cursor: pointer;
+    font-size: medium;
+    
+}
+
+.product:nth-child(2){
+    transform: scale(1.2);  
+    /*تكبير العنصر الاوسط*/
+    background: (255,193,7,0.2);
+} 
+
+
+
+.fries{
+    display: flex;
+    align-items: center; /* لضبط العناصر على نفس الخط */
+    justify-content: space-between; /* يوزع العناصر بين اليمين واليسار */
+    padding: 50px; /* تأكد من وجود تباعد متناسق */
+ 
+    
+}
+.fries .fries-image{
+    width: 80%; /* جعل حجم الصورة مماثلاً للنص */
+    display: flex;
+    justify-content: center;
+
+}
+
+.fries img{
+    width: 1000px;
+    height: auto;
+}
+.fries-text{
+    max-width: 50%;
+    color: #1a1a1a;
+    font-size:30px;
+}
+
+
+.fries-text h1{
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.fries-text p{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}
+
+.dawi{
+    color: black;
+}
+.dawi p{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.dawi ul {
+    font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-evenly;  /* توزيع العناصر بالتساوي عبر السطر */
+    text-align: center;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    padding-right: 10px;
+
+}
+
+.dawi ul li{
+    display: flex;
+    align-items: center;  /* يجعل الرمز والنص في نفس السطر */
+  
+    font-size: 1.2em;  /* تكبير حجم الخط */
+    gap: 10px;
+}
+
+.dawi ul i {
+    margin-right: 10px;  /* المسافة بين الرمز والنص */
+    font-size: 2em;  /* تكبير حجم الرمز */
+}
+
+.dawi ul a{
+    display: inline-block; 
+    text-decoration: none;
+    transition: 0.2s ease-in; 
+    font-size: 20px;  
+    color: rgb(6, 6, 6); 
+}
+
+/* إضافة تأثير عند التمرير على العناصر */
+.dawi ul li a:hover {
+    color: #e67e22;
+    text-decoration: none;
+}
+
+.footer{
+    margin-top: 50px;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+}
+
+/* التعديلات الخاصة بأجهزة المحمول */
+@media screen and (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* جعل الخلفية تتنقل مع الصفحة */
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 80px;
+        height: auto;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .hero-text h2 {
+        max-width: 100%;
+        font-size: 1.8em;
+    }
+    .hero-image {
+        width: 100%;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+    }
+    .table {
+        flex-direction: column;
+        align-items: center;
+    }
+    .favorites .table {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .product {
+        width: 90%;
+        transform: translateY(0%);
+        margin-top: 0;
+        border-radius: 30px;
+    }
+
+    .product img {
+        width: 80%;
+    }
+
+    .fries {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fries-text {
+        max-width: 100%;
+        /* text-align: center;
+        font-size: 1.8em; */
+    }
+
+    .fries img {
+        width: 90%;
+    }
+
+    .dawi ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .dawi ul li {
+        font-size: 20px;
+    }
+}
+
+/* التعديلات لأجهزة الكمبيوتر اللوحي (من 768px إلى 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .hero {
+        padding: 40px;
+    }
+
+    .hero-text {
+        font-size: 2em;
+    }
+
+    .hero-image img {
+        width: 70%;
+    }
+
+    .favorites .table {
+        flex-direction: row;
+        gap: 60px;
+    }
+
+    .product {
+        width: 300px;
+        margin-top: 0;
+    }
+
+    .product img {
+        width: 100%;
+    }
+
+    .fries img {
+        width: 80%;
+    }
+}

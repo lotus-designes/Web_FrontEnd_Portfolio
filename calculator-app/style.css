@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* background-color: #dfb4dd; */
+    background-image: url("cute-tiger-studio-with-copy-space.jpg");
+    background-repeat: no-repeat; /* لا تكرر الصورة */
+    background-size: cover;       /* تجعل الصورة تغطي كل الشاشة */
+    background-position: center;  /* تركز الصورة في المنتصف */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+  }
+  
+  .calculator {
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    padding: 20px;
+    width: 330px;
+    /* max-width: 330px; */
+    padding-top: 50px;
+  }
+  
+  #display {
+    width: 100%;
+    height: 60px;
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: right;
+    padding: 10px;
+    border: none;
+    border-radius: 45px;
+    background-color: #f3eeee; 
+    color: #d3709e;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* ظل حول الحواف */
+  }
+  
+  .buttons .row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    flex: 1;
+    font-size: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 50%;
+    background-color: #b0a8a830;
+    color: rgb(35, 34, 34);
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* ظل حول الحواف */
+  }
+  
+  button:hover {
+    background-color: #e4bbce;
+  }
+  
+  button.pink {
+    background-color: #b0a8a830;
+  }
+  
+  button.pink:hover {
+    background-color: #e4bbce;
+  }
+  
+  button.pink {
+    background-color: #b0a8a830;
+    color: black;
+  }
+  
+  button.wide {
+    flex: 3;
+    border-radius: 40px;
+    background-color: #e4bbce;
+  }
+  
+
+  #dark-mode-toggle {
+    position: fixed;           /* يبقيه في مكان ثابت */
+    top: 10px;                 /* مسافة من الأعلى */
+    right: 10px;               /* مسافة من اليمين */
+    padding: 6px 10px;         /* حجم صغير ولطيف */
+    font-size: 18px;           /* حجم الأيقونة */
+    border: none;
+    border-radius: 50%;        /* شكل دائري */
+    background-color: #e7e7ed;    /* لون داكن مريح */
+    color: white;
+    cursor: pointer;
+    z-index: 1000;             /* يبقيه فوق كل العناصر */
+    transition: background 0.3s;
+  }
+  
+  #dark-mode-toggle:hover {
+    background-color: #666;
+  }
+
+  
+
+/* darkmode */
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+body.dark .calculator {
+  background-color: #1e1e1e;
+}
+
+body.dark button {
+  background-color: #333;
+  color: white;
+}
+
+body.dark button:hover{
+  background-color: #e4bbce;
+  color: rgb(17, 14, 14);
+}
+
+body.dark button.gray {
+  background-color: #555;
+  color: white;
+}
+
+
+@media (max-width: 480px) {
+    body {
+    align-items: flex-start;
+    padding-top: 60px;
+  }
+  .calculator {
+    width: 80%;
+    max-width: none;
+    padding: 20px;
+  }
+
+  button {
+    font-size: 20px;
+    padding: 18px;
+  }
+
+  #display {
+    font-size: 28px;
+    height: 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    justify-content: flex-end; /* يحطها يمين */
+    padding-right: 200px; /* مسافة عن الحافة */
+  }
+}
